@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任务四：Servlet 处理表单</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="theme-section">
+<div class="page-shell">
+    <header class="page-header">
+        <p class="eyebrow">Task 04</p>
+        <h1>学生信息登记表</h1>
+        <p class="section-intro">
+            这个页面对应课程里的“Servlet 处理表单”任务。先定义一个类似学校信息采集的表单，再把数据提交给 Servlet 处理。
+        </p>
+        <nav class="page-nav">
+            <a href="index.jsp">返回首页</a>
+            <a href="html-forms.html">回到 HTML 表单练习</a>
+            <a href="hello-servlet">查看基础 Servlet</a>
+        </nav>
+    </header>
+
+    <main class="content-stack">
+        <section class="card">
+            <h2>任务要求对应</h2>
+            <ul class="feature-list">
+                <li>任务一：定义一个类似“学校信息登记”的表单。</li>
+                <li>任务二：定义一个 Servlet 处理表单，获取用户提交的数据。</li>
+                <li>当前提交地址：<code>student-form</code>，提交方式：<code>POST</code>。</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <form class="demo-form" action="student-form" method="post">
+                <fieldset>
+                    <legend>基本资料</legend>
+
+                    <label>
+                        <span>姓名</span>
+                        <input type="text" name="studentName" placeholder="请输入姓名" required maxlength="20" autofocus>
+                    </label>
+
+                    <label>
+                        <span>学号</span>
+                        <input type="text" name="studentId" placeholder="例如 20260001" required>
+                    </label>
+
+                    <div class="option-group">
+                        <span>性别</span>
+                        <label class="inline-option"><input type="radio" name="gender" value="男" checked> 男</label>
+                        <label class="inline-option"><input type="radio" name="gender" value="女"> 女</label>
+                    </div>
+
+                    <label>
+                        <span>年龄</span>
+                        <input type="number" name="age" min="16" max="35" value="20">
+                    </label>
+
+                    <label>
+                        <span>出生日期</span>
+                        <input type="date" name="birthday">
+                    </label>
+
+                    <label>
+                        <span>联系电话</span>
+                        <input type="tel" name="phone" pattern="[0-9]{11}" placeholder="请输入 11 位手机号">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>学习信息</legend>
+
+                    <label>
+                        <span>学院</span>
+                        <select name="department">
+                            <option value="计算机学院" selected>计算机学院</option>
+                            <option value="信息工程学院">信息工程学院</option>
+                            <option value="管理学院">管理学院</option>
+                            <option value="外国语学院">外国语学院</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <span>专业</span>
+                        <input type="text" name="major" value="软件工程">
+                    </label>
+
+                    <label>
+                        <span>班级</span>
+                        <input type="text" name="className" value="软工 1 班">
+                    </label>
+
+                    <label>
+                        <span>邮箱</span>
+                        <input type="email" name="email" placeholder="student@example.com">
+                    </label>
+
+                    <div class="option-group">
+                        <span>兴趣方向</span>
+                        <label class="inline-option"><input type="checkbox" name="interest" value="JavaWeb" checked> JavaWeb</label>
+                        <label class="inline-option"><input type="checkbox" name="interest" value="数据库"> 数据库</label>
+                        <label class="inline-option"><input type="checkbox" name="interest" value="前端开发"> 前端开发</label>
+                        <label class="inline-option"><input type="checkbox" name="interest" value="算法"> 算法</label>
+                    </div>
+
+                    <label class="full-width">
+                        <span>个人简介</span>
+                        <textarea name="introduction" rows="5" placeholder="介绍一下你的学习方向、兴趣或目标"></textarea>
+                    </label>
+                </fieldset>
+
+                <div class="button-row">
+                    <button class="button primary" type="submit">提交登记信息</button>
+                    <button class="button secondary" type="reset">重置表单</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>

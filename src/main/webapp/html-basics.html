@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一组：HTML 基础标签</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="theme-section">
+<!-- HTML 注释示例：这段内容不会显示在页面中，但在查看网页源代码时可以看到。 -->
+<div class="page-shell">
+    <header class="page-header">
+        <p class="eyebrow">Task 01</p>
+        <h1>HTML 基础标签练习</h1>
+        <p class="section-intro">本页演示注释、CSS、链接、图像、表格和列表，是最基础的一组 HTML 元素操练。</p>
+        <nav class="page-nav">
+            <a href="index.jsp">返回首页</a>
+            <a href="html-forms.html">下一组：表单</a>
+            <a href="html-advanced.jsp">跳到第三组</a>
+        </nav>
+    </header>
+
+    <main class="content-stack">
+        <section class="card">
+            <h2>HTML 注释</h2>
+            <p>页面最上方已经写入一段 HTML 注释。注释不会显示在浏览器页面里，但会保留在源码中。</p>
+            <pre class="code-block"><code>&lt;!-- 这是一段 HTML 注释 --&gt;</code></pre>
+        </section>
+
+        <section class="card">
+            <h2>HTML CSS</h2>
+            <p>下面的色块、按钮和卡片边框都由外部 CSS 文件控制，说明 HTML 可以和 CSS 配合完成页面美化。</p>
+            <div class="demo-badges">
+                <span class="badge warm">结构清晰</span>
+                <span class="badge cool">颜色统一</span>
+                <span class="badge accent">布局整洁</span>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>HTML 链接</h2>
+            <p>链接可以跳转站内页面、页内锚点，或打开外部文档。</p>
+            <div class="link-list">
+                <a href="html-forms.html">站内链接：打开第二组表单页面</a>
+                <a href="#list-demo">页内锚点：跳转到列表示例</a>
+                <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="noreferrer">外部链接：MDN HTML 文档</a>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>HTML 图像</h2>
+            <figure class="media-card">
+                <img src="assets/images/html-basics.svg" alt="HTML 基础练习插图">
+                <figcaption>使用 <code>&lt;img&gt;</code> 标签引入本地图片资源。</figcaption>
+            </figure>
+        </section>
+
+        <section class="card">
+            <h2>HTML 表格</h2>
+            <table class="demo-table">
+                <thead>
+                <tr>
+                    <th>练习项</th>
+                    <th>标签示例</th>
+                    <th>课堂用途</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>链接</td>
+                    <td>&lt;a&gt;</td>
+                    <td>页面跳转、资源导航</td>
+                </tr>
+                <tr>
+                    <td>图像</td>
+                    <td>&lt;img&gt;</td>
+                    <td>展示插图、头像、图标</td>
+                </tr>
+                <tr>
+                    <td>列表</td>
+                    <td>&lt;ul&gt; / &lt;ol&gt; / &lt;dl&gt;</td>
+                    <td>整理步骤、要点和概念</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="list-demo" class="card">
+            <h2>HTML 列表</h2>
+            <div class="list-grid">
+                <div>
+                    <h3>无序列表</h3>
+                    <ul class="feature-list">
+                        <li>HTML 注释</li>
+                        <li>HTML CSS</li>
+                        <li>HTML 链接</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>有序列表</h3>
+                    <ol class="feature-list ordered">
+                        <li>打开页面</li>
+                        <li>查看源码</li>
+                        <li>逐项测试效果</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>定义列表</h3>
+                    <dl class="definition-list">
+                        <dt>HTML</dt>
+                        <dd>网页的结构语言。</dd>
+                        <dt>CSS</dt>
+                        <dd>网页的样式语言。</dd>
+                        <dt>Link</dt>
+                        <dd>把多个页面和资源连接起来。</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+</body>
+</html>

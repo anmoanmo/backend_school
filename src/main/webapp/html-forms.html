@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二组：HTML 表单</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="theme-section">
+<div class="page-shell">
+    <header class="page-header">
+        <p class="eyebrow">Task 02</p>
+        <h1>HTML 表单练习</h1>
+        <p class="section-intro">这一页集中演示 HTML 表单、表单元素、输入类型和输入属性。点击提交后会进入本地 Servlet 回显页面。</p>
+        <nav class="page-nav">
+            <a href="index.jsp">返回首页</a>
+            <a href="html-basics.html">上一组：基础标签</a>
+            <a href="html-advanced.jsp">下一组：进阶主题</a>
+        </nav>
+    </header>
+
+    <main class="content-stack">
+        <section class="card">
+            <h2>HTML 表单</h2>
+            <p>这个表单使用了常见的文本框、邮箱、密码、数字、日期、单选框、复选框、下拉框、文本域等元素。</p>
+        </section>
+
+        <section class="card">
+            <form class="demo-form" action="form-echo" method="post">
+                <input type="hidden" name="course" value="javaweb-html-practice">
+
+                <fieldset>
+                    <legend>基础信息</legend>
+
+                    <label>
+                        <span>姓名</span>
+                        <input type="text" name="name" placeholder="请输入姓名" required maxlength="20" autofocus>
+                    </label>
+
+                    <label>
+                        <span>邮箱</span>
+                        <input type="email" name="email" placeholder="name@example.com" required>
+                    </label>
+
+                    <label>
+                        <span>密码</span>
+                        <input type="password" name="password" placeholder="请输入密码" required minlength="6">
+                    </label>
+
+                    <label>
+                        <span>年龄</span>
+                        <input type="number" name="age" min="16" max="60" value="18">
+                    </label>
+
+                    <label>
+                        <span>手机号</span>
+                        <input type="tel" name="phone" pattern="[0-9]{11}" placeholder="11位数字手机号">
+                    </label>
+
+                    <label>
+                        <span>练习日期</span>
+                        <input type="date" name="practiceDate">
+                    </label>
+
+                    <label>
+                        <span>个人主页</span>
+                        <input type="url" name="homepage" placeholder="https://example.com">
+                    </label>
+
+                    <label>
+                        <span>班级编号</span>
+                        <input type="text" name="classCode" value="JAVA-WEB-01" readonly>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>表单元素与输入属性</legend>
+
+                    <label>
+                        <span>年级</span>
+                        <select name="grade">
+                            <option value="freshman">大一</option>
+                            <option value="sophomore" selected>大二</option>
+                            <option value="junior">大三</option>
+                            <option value="senior">大四</option>
+                        </select>
+                    </label>
+
+                    <div class="option-group">
+                        <span>练习方式</span>
+                        <label class="inline-option"><input type="radio" name="mode" value="browser" checked> 浏览器测试</label>
+                        <label class="inline-option"><input type="radio" name="mode" value="typing"> 敲代码练习</label>
+                        <label class="inline-option"><input type="radio" name="mode" value="review"> 复盘检查</label>
+                    </div>
+
+                    <div class="option-group">
+                        <span>重点内容</span>
+                        <label class="inline-option"><input type="checkbox" name="focus" value="comment" checked> 注释</label>
+                        <label class="inline-option"><input type="checkbox" name="focus" value="table"> 表格</label>
+                        <label class="inline-option"><input type="checkbox" name="focus" value="form"> 表单</label>
+                        <label class="inline-option"><input type="checkbox" name="focus" value="url"> URL</label>
+                    </div>
+
+                    <label>
+                        <span>浏览器</span>
+                        <input list="browser-list" name="browser" placeholder="选择或输入浏览器">
+                    </label>
+                    <datalist id="browser-list">
+                        <option value="Chrome"></option>
+                        <option value="Edge"></option>
+                        <option value="Firefox"></option>
+                        <option value="Safari"></option>
+                    </datalist>
+
+                    <label>
+                        <span>喜欢的颜色</span>
+                        <input type="color" name="themeColor" value="#ff7a18">
+                    </label>
+
+                    <label>
+                        <span>练习时长</span>
+                        <input type="range" name="hours" min="1" max="10" value="4">
+                    </label>
+
+                    <label class="full-width">
+                        <span>学习备注</span>
+                        <textarea name="remark" rows="5" placeholder="写下你在 HTML 操练中的观察和收获"></textarea>
+                    </label>
+                </fieldset>
+
+                <div class="button-row">
+                    <button class="button primary" type="submit">提交表单</button>
+                    <button class="button secondary" type="reset">重置表单</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>GET 提交与 URL 参数</h2>
+            <p>下面这个小表单会使用 <code>GET</code> 方法跳转到第三组页面，你可以观察地址栏中的参数和编码效果。</p>
+            <form class="inline-form" action="html-advanced.jsp" method="get">
+                <label>
+                    <span>主题</span>
+                    <input type="text" name="topic" value="JavaWeb">
+                </label>
+                <label>
+                    <span>城市</span>
+                    <input type="text" name="city" value="北京">
+                </label>
+                <button class="button secondary" type="submit">用 GET 打开第三组页面</button>
+            </form>
+        </section>
+    </main>
+</div>
+</body>
+</html>
