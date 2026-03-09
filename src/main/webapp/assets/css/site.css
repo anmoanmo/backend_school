@@ -295,6 +295,21 @@ pre {
     min-width: 1120px;
 }
 
+.section-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.action-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 .table-sticky-action {
     border-collapse: separate;
     border-spacing: 0;
@@ -561,6 +576,10 @@ pre {
     .link-list > * {
         width: 100%;
         justify-content: center;
+    }
+
+    .section-toolbar {
+        flex-direction: column;
     }
 
     .table-scroll {

@@ -32,6 +32,7 @@
             <% } %>
             <a href="<%= request.getContextPath() %>/student-query">进入第五章查询</a>
             <a href="<%= request.getContextPath() %>/student-update">进入第七章修改</a>
+            <a href="<%= request.getContextPath() %>/student-interaction">进入第八章总控页</a>
             <a href="<%= request.getContextPath() %>/index.jsp">返回首页</a>
         </nav>
     </header>

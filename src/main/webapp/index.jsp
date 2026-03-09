@@ -13,11 +13,11 @@
         <p class="eyebrow">Backend Development Basics</p>
         <h1>后端服务开发基础课程项目</h1>
         <p class="hero-text">
-            这个项目按“前端基础到后端数据管理”的顺序整理了当前七章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC 和本地 MySQL 串成了一个完整示例。
+            这个项目按“前端基础到后端数据管理”的顺序整理了当前八章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC 和本地 MySQL 串成了一个完整示例。
         </p>
         <div class="hero-actions">
             <a class="button primary" href="html-basics.html">从第一章开始</a>
-            <a class="button secondary" href="student-update">直达第七章</a>
+            <a class="button secondary" href="student-interaction">直达第八章</a>
         </div>
     </header>
 
@@ -87,6 +87,16 @@
                 <a class="text-link" href="student-db-form">共用新增/修改表单</a>
             </div>
         </article>
+
+        <article class="card">
+            <span class="card-index">08</span>
+            <h2>第八章 Servlet 交互</h2>
+            <p>把增删改查统一到一个总控页中，并在同一章里演示 forward、sendRedirect 和 include 三种交互方式。</p>
+            <div class="link-list">
+                <a class="text-link" href="student-interaction">第八章总控页</a>
+                <a class="text-link" href="student-interaction?action=new">第八章新增入口</a>
+            </div>
+        </article>
     </main>
 
     <section class="card">
@@ -97,6 +107,7 @@
             <li>第四章提交数据库表单后，再进入第五章查询页，确认数据已经进入本地 MySQL 并能显示到浏览器。</li>
             <li>第六章在管理页点击删除链接，观察 URL 中的主键参数如何传入 Servlet 并删除一条记录。</li>
             <li>第七章在修改页点击“修改”，确认表单会自动回显原记录，提交后更新数据库中的对应行。</li>
+            <li>第八章进入总控页，观察 forward 进表单、sendRedirect 回列表、include 统计片段这三种交互如何配合完成完整 CRUD。</li>
             <li>根目录中的 README 负责说明整体结构，本地数据库信息保存在不上传的 `.local` 文档中。</li>
         </ul>
     </section>
