@@ -1,6 +1,6 @@
 # 后端服务开发基础课程项目
 
-这个项目把当前已经完成的课程任务整理成一个递进式 JavaWeb 示例，从 HTML 基础一直走到 Servlet + JDBC + MySQL 查询、删除、按主键修改和交互整合。
+这个项目把当前已经完成的课程任务整理成一个递进式 JavaWeb 示例，从 HTML 基础一直走到 Servlet + JDBC + MySQL 查询、删除、按主键修改、交互整合、JSP 视图开发、文件上传和文件下载。
 
 ## 章节结构
 
@@ -65,6 +65,36 @@
 - 第八章表单页：`src/main/webapp/student-interaction-form.jsp`
 - 关键知识点：`forward` 转发表单/列表、`sendRedirect` 防止重复提交、`include` 引入统计片段、把增删改查统一到一页中联动
 
+### 第九章：JSP 开发
+
+- 第九章 Servlet：`src/main/java/com/example/backend_development/StudentJspServlet.java`
+- JSP 查询页：`src/main/webapp/student-jsp-query.jsp`
+- JSP 表单页：`src/main/webapp/student-jsp-form.jsp`
+- JSP 片段：`src/main/webapp/WEB-INF/jspf/student-jsp-status.jspf`
+- JSP 片段：`src/main/webapp/WEB-INF/jspf/student-jsp-query-table.jspf`
+- JSP 片段：`src/main/webapp/WEB-INF/jspf/student-jsp-form-fields.jspf`
+- 关键知识点：Servlet 准备数据后 forward 到 JSP、查询结果表格改造为 JSP 页面、修改数据显示表单改造为 JSP 页面、通过 JSP 片段复用视图结构
+
+### 第十章：文件上传
+
+- 上传 Servlet：`src/main/java/com/example/backend_development/FileUploadServlet.java`
+- 文件元数据 VO：`src/main/java/com/example/backend_development/FileUploadRecordVO.java`
+- 文件元数据 DAO：`src/main/java/com/example/backend_development/FileUploadRecordDao.java`
+- 文件存储工具：`src/main/java/com/example/backend_development/FileStorageUtil.java`
+- 上传页面：`src/main/webapp/file-upload.jsp`
+- 数据库表：`uploaded_file_records`
+- 默认上传目录：`D:\school_work\backend_development\uploads`
+- 关键知识点：`multipart/form-data`、`request.getPart(...)`、服务器本地目录落盘、上传路径信息入库
+
+### 第十一章：文件下载
+
+- 下载列表页 Servlet：`src/main/java/com/example/backend_development/FileDownloadPageServlet.java`
+- 简单下载 Servlet：`src/main/java/com/example/backend_development/FileDownloadSimpleServlet.java`
+- 经典下载 Servlet：`src/main/java/com/example/backend_development/FileDownloadClassicServlet.java`
+- 数据导出 Servlet：`src/main/java/com/example/backend_development/StudentExportServlet.java`
+- 下载页面：`src/main/webapp/file-download.jsp`
+- 关键知识点：最简单的文件流下载、`Content-Disposition` 经典下载、数据库数据导出为 CSV 并下载
+
 ## 项目入口
 
 - 首页：`src/main/webapp/index.jsp`
@@ -115,3 +145,6 @@
 5. 打开第六章管理页面，点击删除链接，展示主键参数如何驱动删除逻辑
 6. 打开第七章修改页面，点击“修改”链接，展示记录回显和数据库更新流程
 7. 打开第八章总控页，体验 forward 进入表单、sendRedirect 回总控页、include 统计片段，以及一站式增删改查
+8. 打开第九章 JSP 查询页和 JSP 表单页，体验 JSP 页面和 JSP 片段如何接管查询显示与修改回显
+9. 打开第十章上传页，上传一个文件并检查服务器目录和数据库记录
+10. 打开第十一章下载页，测试简单下载、经典下载和 CSV 导出下载

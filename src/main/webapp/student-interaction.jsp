@@ -26,6 +26,7 @@
         <nav class="page-nav">
             <a href="<%= request.getContextPath() %>/index.jsp">返回首页</a>
             <a href="<%= request.getContextPath() %>/student-update">回到第七章</a>
+            <a href="<%= request.getContextPath() %>/student-jsp">下一章：JSP 开发</a>
             <a href="<%= request.getContextPath() %>/student-interaction?action=new">新增记录</a>
             <a href="<%= request.getContextPath() %>/student-interaction">刷新总控页</a>
         </nav>

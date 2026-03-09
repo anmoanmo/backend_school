@@ -13,11 +13,11 @@
         <p class="eyebrow">Backend Development Basics</p>
         <h1>后端服务开发基础课程项目</h1>
         <p class="hero-text">
-            这个项目按“前端基础到后端数据管理”的顺序整理了当前八章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC 和本地 MySQL 串成了一个完整示例。
+            这个项目按“前端基础到后端数据管理”的顺序整理了当前十一章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC 和本地 MySQL 串成了一个完整示例。
         </p>
         <div class="hero-actions">
             <a class="button primary" href="html-basics.html">从第一章开始</a>
-            <a class="button secondary" href="student-interaction">直达第八章</a>
+            <a class="button secondary" href="file-download">直达第十一章</a>
         </div>
     </header>
 
@@ -97,6 +97,35 @@
                 <a class="text-link" href="student-interaction?action=new">第八章新增入口</a>
             </div>
         </article>
+
+        <article class="card">
+            <span class="card-index">09</span>
+            <h2>第九章 JSP 开发</h2>
+            <p>把查询结果页面和修改数据显示页面改造成 JSP 视图层版本，并通过 JSP 片段减少页面重复代码。</p>
+            <div class="link-list">
+                <a class="text-link" href="student-jsp">第九章查询页</a>
+                <a class="text-link" href="student-jsp?action=new">第九章表单页</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <span class="card-index">10</span>
+            <h2>第十章 文件上传</h2>
+            <p>使用 Multipart 方式把文件上传到服务器指定目录，并把保存路径信息写入数据库表。</p>
+            <div class="link-list">
+                <a class="text-link" href="file-upload">第十章文件上传页</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <span class="card-index">11</span>
+            <h2>第十一章 文件下载</h2>
+            <p>实现简单下载、经典下载以及数据库数据导出下载，并复用第十章的上传记录作为文件来源。</p>
+            <div class="link-list">
+                <a class="text-link" href="file-download">第十一章文件下载页</a>
+                <a class="text-link" href="student-export">导出学生数据 CSV</a>
+            </div>
+        </article>
     </main>
 
     <section class="card">
@@ -108,6 +137,9 @@
             <li>第六章在管理页点击删除链接，观察 URL 中的主键参数如何传入 Servlet 并删除一条记录。</li>
             <li>第七章在修改页点击“修改”，确认表单会自动回显原记录，提交后更新数据库中的对应行。</li>
             <li>第八章进入总控页，观察 forward 进表单、sendRedirect 回列表、include 统计片段这三种交互如何配合完成完整 CRUD。</li>
+            <li>第九章进入 JSP 查询页和 JSP 表单页，确认查询表格和修改回显都已经收口到 JSP 页面和 JSP 片段中。</li>
+            <li>第十章上传一个文件，确认文件已经保存到服务器目录，并且上传路径信息已经进入数据库表。</li>
+            <li>第十一章测试简单下载、经典下载和 CSV 导出下载，确认三种下载方式都能触发浏览器获取文件。</li>
             <li>根目录中的 README 负责说明整体结构，本地数据库信息保存在不上传的 `.local` 文档中。</li>
         </ul>
     </section>

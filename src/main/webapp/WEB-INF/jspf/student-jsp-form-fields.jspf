@@ -1,0 +1,77 @@
+<%@ page pageEncoding="UTF-8" %>
+<fieldset>
+    <legend>基本资料</legend>
+
+    <label>
+        <span>姓名</span>
+        <input type="text" name="studentName" placeholder="请输入姓名" required maxlength="20" value="<%= studentName %>" autofocus>
+    </label>
+
+    <label>
+        <span>学号</span>
+        <input type="text" name="studentId" placeholder="例如 20260001" required value="<%= studentId %>">
+    </label>
+
+    <div class="option-group">
+        <span>性别</span>
+        <label class="inline-option"><input type="radio" name="gender" value="男" <%= !"女".equals(record.getGender()) ? "checked" : "" %>> 男</label>
+        <label class="inline-option"><input type="radio" name="gender" value="女" <%= "女".equals(record.getGender()) ? "checked" : "" %>> 女</label>
+    </div>
+
+    <label>
+        <span>年龄</span>
+        <input type="number" name="age" min="16" max="35" value="<%= age %>">
+    </label>
+
+    <label>
+        <span>出生日期</span>
+        <input type="date" name="birthday" value="<%= birthday %>">
+    </label>
+
+    <label>
+        <span>联系电话</span>
+        <input type="tel" name="phone" pattern="[0-9]{11}" placeholder="请输入 11 位手机号" value="<%= phone %>">
+    </label>
+</fieldset>
+
+<fieldset>
+    <legend>学习信息</legend>
+
+    <label>
+        <span>学院</span>
+        <select name="department">
+            <option value="计算机学院" <%= (record.getDepartment() == null || "计算机学院".equals(record.getDepartment())) ? "selected" : "" %>>计算机学院</option>
+            <option value="信息工程学院" <%= "信息工程学院".equals(record.getDepartment()) ? "selected" : "" %>>信息工程学院</option>
+            <option value="管理学院" <%= "管理学院".equals(record.getDepartment()) ? "selected" : "" %>>管理学院</option>
+            <option value="外国语学院" <%= "外国语学院".equals(record.getDepartment()) ? "selected" : "" %>>外国语学院</option>
+        </select>
+    </label>
+
+    <label>
+        <span>专业</span>
+        <input type="text" name="major" value="<%= major.isEmpty() && !updateMode ? "软件工程" : major %>">
+    </label>
+
+    <label>
+        <span>班级</span>
+        <input type="text" name="className" value="<%= className.isEmpty() && !updateMode ? "软工 1 班" : className %>">
+    </label>
+
+    <label>
+        <span>邮箱</span>
+        <input type="email" name="email" placeholder="student@example.com" value="<%= email %>">
+    </label>
+
+    <div class="option-group">
+        <span>兴趣方向</span>
+        <label class="inline-option"><input type="checkbox" name="interest" value="JavaWeb" <%= interests.contains("JavaWeb") || (!updateMode && interests.isEmpty()) ? "checked" : "" %>> JavaWeb</label>
+        <label class="inline-option"><input type="checkbox" name="interest" value="数据库" <%= interests.contains("数据库") ? "checked" : "" %>> 数据库</label>
+        <label class="inline-option"><input type="checkbox" name="interest" value="前端开发" <%= interests.contains("前端开发") ? "checked" : "" %>> 前端开发</label>
+        <label class="inline-option"><input type="checkbox" name="interest" value="算法" <%= interests.contains("算法") ? "checked" : "" %>> 算法</label>
+    </div>
+
+    <label class="full-width">
+        <span>个人简介</span>
+        <textarea name="introduction" rows="5" placeholder="介绍一下你的学习方向、兴趣或目标"><%= introduction %></textarea>
+    </label>
+</fieldset>

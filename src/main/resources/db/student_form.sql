@@ -14,3 +14,13 @@ CREATE TABLE IF NOT EXISTS student_form_records (
     introduction VARCHAR(1000),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS uploaded_file_records (
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    original_file_name VARCHAR(255) NOT NULL,
+    stored_file_name VARCHAR(255) NOT NULL,
+    storage_path VARCHAR(600) NOT NULL,
+    content_type VARCHAR(200),
+    file_size BIGINT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

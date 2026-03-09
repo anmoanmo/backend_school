@@ -1,0 +1,18 @@
+<%@ page pageEncoding="UTF-8" %>
+<% if ("created".equals(status)) { %>
+<section class="status-banner success">
+    已新增主键为 <strong><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(targetId)) %></strong> 的记录，并返回到第九章 JSP 查询页。
+</section>
+<% } else if ("updated".equals(status)) { %>
+<section class="status-banner success">
+    已更新主键为 <strong><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(targetId)) %></strong> 的记录，并返回到第九章 JSP 查询页。
+</section>
+<% } else if ("notfound".equals(status)) { %>
+<section class="status-banner warning">
+    没有找到主键为 <strong><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(targetId)) %></strong> 的记录，可能已经被删除。
+</section>
+<% } else if ("invalid".equals(status)) { %>
+<section class="status-banner danger">
+    请求中的主键参数不合法，收到的值是 <strong><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(targetId)) %></strong>。
+</section>
+<% } %>

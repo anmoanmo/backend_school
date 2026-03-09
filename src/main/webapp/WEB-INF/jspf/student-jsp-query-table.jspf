@@ -1,0 +1,46 @@
+<%@ page pageEncoding="UTF-8" %>
+<% if (records == null || records.isEmpty()) { %>
+<p class="note">数据库中还没有记录。先点击“新增记录”，再回到这里查看 JSP 渲染后的查询结果。</p>
+<% } else { %>
+<div class="table-scroll">
+    <table class="demo-table demo-table-update table-sticky-action">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>学院</th>
+            <th>专业</th>
+            <th>班级</th>
+            <th>联系电话</th>
+            <th>兴趣方向</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (StudentRecordVO record : records) { %>
+        <tr>
+            <td><%= record.getId() %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getStudentId())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getStudentName())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getGender())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getDepartment())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getMajor())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getClassName())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getPhone())) %></td>
+            <td><%= HtmlUtil.escapeHtml(HtmlUtil.defaultText(record.getInterests())) %></td>
+            <td><%= HtmlUtil.escapeHtml(record.getCreatedAt() == null ? "未记录" : record.getCreatedAt().toString()) %></td>
+            <td>
+                <a class="action-link primary"
+                   href="<%= request.getContextPath() %>/student-jsp?action=edit&id=<%= record.getId() %>">
+                    JSP 修改
+                </a>
+            </td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<% } %>

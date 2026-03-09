@@ -295,6 +295,14 @@ pre {
     min-width: 1120px;
 }
 
+.demo-table-upload {
+    min-width: 1280px;
+}
+
+.demo-table-download {
+    min-width: 1380px;
+}
+
 .section-toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -308,6 +316,17 @@ pre {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+.upload-summary-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    min-width: min(100%, 360px);
+}
+
+.path-cell {
+    min-width: 320px;
+    font-family: "Cascadia Code", "Consolas", monospace;
+    word-break: break-all;
 }
 
 .table-sticky-action {
@@ -372,6 +391,12 @@ pre {
     background: rgba(15, 118, 110, 0.12);
     color: #0f5f58;
     border-color: rgba(15, 118, 110, 0.18);
+}
+
+.action-link.secondary {
+    background: rgba(200, 90, 29, 0.12);
+    color: #8f3f16;
+    border-color: rgba(200, 90, 29, 0.18);
 }
 
 .list-grid,

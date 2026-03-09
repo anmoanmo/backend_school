@@ -17,6 +17,10 @@ out/
 *.log
 logs/
 
+### Local uploads ###
+uploads/*
+!uploads/.gitkeep
+
 ### Environment / local secrets ###
 .env
 .env.*
