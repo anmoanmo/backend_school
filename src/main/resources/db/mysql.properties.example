@@ -1,0 +1,3 @@
+db.url=jdbc:mysql://127.0.0.1:3306/backend_school?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+db.user=backend_school_app
+db.password=replace-with-your-local-password

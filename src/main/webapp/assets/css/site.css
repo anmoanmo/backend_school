@@ -55,6 +55,10 @@ pre {
     padding: 32px 0 48px;
 }
 
+.page-shell.wide-shell {
+    width: min(1400px, calc(100% - 32px));
+}
+
 .theme-home .page-shell {
     padding-top: 48px;
 }
@@ -64,6 +68,7 @@ pre {
 .card,
 .frame-home,
 .frame-nav {
+    min-width: 0;
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius);
@@ -83,6 +88,7 @@ pre {
     margin: 8px 0 12px;
     font-size: clamp(2rem, 4vw, 3.4rem);
     line-height: 1.05;
+    overflow-wrap: anywhere;
 }
 
 .hero-text,
@@ -150,7 +156,7 @@ pre {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
     gap: 18px;
     margin-bottom: 24px;
 }
@@ -261,16 +267,102 @@ pre {
     border-bottom: 1px solid var(--line);
     text-align: left;
     vertical-align: top;
+    word-break: break-word;
 }
 
 .demo-table th {
     background: rgba(15, 118, 110, 0.08);
 }
 
+.table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.demo-table-wide {
+    min-width: 1680px;
+}
+
+.demo-table-query {
+    min-width: 1320px;
+}
+
+.demo-table-manage {
+    min-width: 980px;
+}
+
+.demo-table-update {
+    min-width: 1120px;
+}
+
+.table-sticky-action {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-sticky-action th:last-child,
+.table-sticky-action td:last-child {
+    position: sticky;
+    right: 0;
+    z-index: 1;
+    min-width: 112px;
+    background: var(--card-strong);
+    box-shadow: -12px 0 18px rgba(31, 41, 51, 0.08);
+}
+
+.table-sticky-action th:last-child {
+    z-index: 2;
+    background: rgba(15, 118, 110, 0.08);
+}
+
+.status-banner {
+    padding: 16px 20px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    font-weight: 600;
+}
+
+.status-banner.success {
+    background: rgba(15, 118, 110, 0.12);
+    color: #0f5f58;
+}
+
+.status-banner.warning {
+    background: rgba(200, 90, 29, 0.12);
+    color: #8f3f16;
+}
+
+.status-banner.danger {
+    background: rgba(153, 27, 27, 0.12);
+    color: #991b1b;
+}
+
+.action-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+.action-link.danger {
+    background: rgba(153, 27, 27, 0.12);
+    color: #991b1b;
+    border-color: rgba(153, 27, 27, 0.18);
+}
+
+.action-link.primary {
+    background: rgba(15, 118, 110, 0.12);
+    color: #0f5f58;
+    border-color: rgba(15, 118, 110, 0.18);
+}
+
 .list-grid,
 .parameter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
     gap: 16px;
 }
 
@@ -283,10 +375,11 @@ pre {
 .demo-form fieldset {
     margin: 0;
     padding: 20px;
+    min-width: 0;
     border: 1px solid rgba(15, 118, 110, 0.16);
     border-radius: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 16px;
 }
 
@@ -301,6 +394,7 @@ pre {
     display: grid;
     gap: 8px;
     font-weight: 600;
+    min-width: 0;
 }
 
 .demo-form label span,
@@ -333,20 +427,35 @@ pre {
 }
 
 .option-group {
-    display: grid;
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    min-width: 0;
 }
 
+.option-group > span {
+    width: 100%;
+}
+
+.demo-form .inline-option,
+.inline-form .inline-option,
 .inline-option {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     font-weight: 500;
+    width: auto;
 }
 
 .inline-option input {
     width: auto;
     margin: 0;
+}
+
+.demo-form textarea,
+.inline-form textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 .full-width {
@@ -423,6 +532,10 @@ pre {
         padding: 20px 0 32px;
     }
 
+    .page-shell.wide-shell {
+        width: min(100% - 20px, 1400px);
+    }
+
     .hero,
     .page-header,
     .card {
@@ -433,6 +546,30 @@ pre {
     .page-header h1,
     .frame-home h1 {
         font-size: 2rem;
+    }
+
+    .hero-actions,
+    .button-row,
+    .page-nav,
+    .link-list {
+        flex-direction: column;
+    }
+
+    .hero-actions > *,
+    .button-row > *,
+    .page-nav > *,
+    .link-list > * {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .table-scroll {
+        padding-bottom: 6px;
+    }
+
+    .demo-table th,
+    .demo-table td {
+        padding: 12px;
     }
 
     .demo-form fieldset {
