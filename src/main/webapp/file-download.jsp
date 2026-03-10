@@ -26,6 +26,7 @@
         <nav class="page-nav">
             <a href="<%= request.getContextPath() %>/index.jsp">返回首页</a>
             <a href="<%= request.getContextPath() %>/file-upload">回到第十章</a>
+            <a href="<%= request.getContextPath() %>/central-controller/list">下一章：中央控制器</a>
             <a href="<%= request.getContextPath() %>/file-download">刷新下载页</a>
         </nav>
     </header>

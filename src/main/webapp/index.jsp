@@ -13,11 +13,11 @@
         <p class="eyebrow">Backend Development Basics</p>
         <h1>后端服务开发基础课程项目</h1>
         <p class="hero-text">
-            这个项目按“前端基础到后端数据管理”的顺序整理了当前十一章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC 和本地 MySQL 串成了一个完整示例。
+            这个项目按“前端基础到后端数据管理”的顺序整理了当前十四章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC、本地 MySQL、中央控制器架构、登录鉴权和过滤器控制串成了一个完整示例。
         </p>
         <div class="hero-actions">
             <a class="button primary" href="html-basics.html">从第一章开始</a>
-            <a class="button secondary" href="file-download">直达第十一章</a>
+            <a class="button secondary" href="filter-control.jsp">直达第十四章</a>
         </div>
     </header>
 
@@ -126,6 +126,37 @@
                 <a class="text-link" href="student-export">导出学生数据 CSV</a>
             </div>
         </article>
+
+        <article class="card">
+            <span class="card-index">12</span>
+            <h2>第十二章 中央控制器架构</h2>
+            <p>把学生管理和文件管理升级为统一入口的 Front Controller 结构，由中央控制器按路径分发列表、表单、保存、删除、上传和下载动作。</p>
+            <div class="link-list">
+                <a class="text-link" href="central-controller/list">中央控制器列表页</a>
+                <a class="text-link" href="central-controller/form">中央控制器表单页</a>
+                <a class="text-link" href="central-controller/files">中央控制器文件模块</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <span class="card-index">13</span>
+            <h2>第十三章 登录的实现</h2>
+            <p>实现登录表单、登录动作处理、用户名密码验证和错误信息提示，并通过会话保护第十二章中央控制器。</p>
+            <div class="link-list">
+                <a class="text-link" href="login">第十三章登录页</a>
+                <a class="text-link" href="logout">退出登录</a>
+            </div>
+        </article>
+
+        <article class="card">
+            <span class="card-index">14</span>
+            <h2>第十四章 过滤器和登录控制</h2>
+            <p>定义过滤器、配置过滤器，并在过滤器中验证用户是否处于登录状态，再决定是否放行到第十二章中央控制器。</p>
+            <div class="link-list">
+                <a class="text-link" href="filter-control.jsp">第十四章过滤器页</a>
+                <a class="text-link" href="central-controller/list">受保护资源入口</a>
+            </div>
+        </article>
     </main>
 
     <section class="card">
@@ -140,6 +171,9 @@
             <li>第九章进入 JSP 查询页和 JSP 表单页，确认查询表格和修改回显都已经收口到 JSP 页面和 JSP 片段中。</li>
             <li>第十章上传一个文件，确认文件已经保存到服务器目录，并且上传路径信息已经进入数据库表。</li>
             <li>第十一章测试简单下载、经典下载和 CSV 导出下载，确认三种下载方式都能触发浏览器获取文件。</li>
+            <li>第十二章进入中央控制器页，观察学生管理与文件管理如何统一进入一个入口，再按路径分发到列表、表单、保存、删除、上传和下载动作。</li>
+            <li>第十三章先访问登录页，再登录进入中央控制器，确认用户名密码验证、错误提示和退出登录都能正常工作。</li>
+            <li>第十四章打开过滤器页，观察过滤器定义、过滤器配置，以及未登录访问受保护资源时如何被拦截并重定向到登录页。</li>
             <li>根目录中的 README 负责说明整体结构，本地数据库信息保存在不上传的 `.local` 文档中。</li>
         </ul>
     </section>

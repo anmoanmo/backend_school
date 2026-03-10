@@ -1,6 +1,6 @@
 # 后端服务开发基础课程项目
 
-这个项目把当前已经完成的课程任务整理成一个递进式 JavaWeb 示例，从 HTML 基础一直走到 Servlet + JDBC + MySQL 查询、删除、按主键修改、交互整合、JSP 视图开发、文件上传和文件下载。
+这个项目把当前已经完成的课程任务整理成一个递进式 JavaWeb 示例，从 HTML 基础一直走到 Servlet + JDBC + MySQL 查询、删除、按主键修改、交互整合、JSP 视图开发、文件上传、文件下载、中央控制器架构、登录实现和过滤器控制。
 
 ## 章节结构
 
@@ -95,6 +95,32 @@
 - 下载页面：`src/main/webapp/file-download.jsp`
 - 关键知识点：最简单的文件流下载、`Content-Disposition` 经典下载、数据库数据导出为 CSV 并下载
 
+### 第十二章：中央控制器架构
+
+- 中央控制器 Servlet：`src/main/java/com/example/backend_development/CentralControllerServlet.java`
+- 统一分发结果：`src/main/java/com/example/backend_development/ControllerResult.java`
+- 列表页面：`src/main/webapp/central-controller-list.jsp`
+- 表单页面：`src/main/webapp/central-controller-form.jsp`
+- 文件模块页面：`src/main/webapp/central-controller-files.jsp`
+- 关键知识点：统一入口、按路径分发动作、集中处理 `forward` / `redirect`、把零散 CRUD 与文件上传下载收口到 Front Controller 结构
+
+### 第十三章：登录的实现
+
+- 登录 Servlet：`src/main/java/com/example/backend_development/LoginServlet.java`
+- 退出 Servlet：`src/main/java/com/example/backend_development/LogoutServlet.java`
+- 登录校验服务：`src/main/java/com/example/backend_development/LoginService.java`
+- 会话工具：`src/main/java/com/example/backend_development/AuthSessionUtil.java`
+- 访问控制过滤器：`src/main/java/com/example/backend_development/AuthFilter.java`
+- 登录页面：`src/main/webapp/login.jsp`
+- 关键知识点：登录表单、处理登录 action、用户名密码验证、错误提示、会话鉴权、通过过滤器保护第十二章中央控制器
+
+### 第十四章：过滤器和登录控制
+
+- 过滤器类：`src/main/java/com/example/backend_development/AuthFilter.java`
+- 过滤器配置：`src/main/webapp/WEB-INF/web.xml`
+- 演示页面：`src/main/webapp/filter-control.jsp`
+- 关键知识点：过滤器的定义、过滤器的配置、在过滤器里检查用户登录状态、未登录时重定向到登录页
+
 ## 项目入口
 
 - 首页：`src/main/webapp/index.jsp`
@@ -148,3 +174,6 @@
 8. 打开第九章 JSP 查询页和 JSP 表单页，体验 JSP 页面和 JSP 片段如何接管查询显示与修改回显
 9. 打开第十章上传页，上传一个文件并检查服务器目录和数据库记录
 10. 打开第十一章下载页，测试简单下载、经典下载和 CSV 导出下载
+11. 打开第十二章中央控制器页，体验统一入口如何按路径分发列表、表单、保存、删除、上传和下载动作
+12. 打开第十三章登录页，使用 `admin / 123456` 登录后进入中央控制器，再测试退出登录和错误提示
+13. 打开第十四章过滤器页，再在未登录状态下访问中央控制器，确认过滤器会拦截并要求先登录
