@@ -1,18 +1,18 @@
 :root {
-    --bg: #f4efe7;
-    --bg-soft: #fff8ee;
-    --card: rgba(255, 252, 247, 0.88);
-    --card-strong: #fffdf9;
-    --text: #1f2933;
-    --muted: #5b6670;
-    --line: rgba(31, 41, 51, 0.12);
-    --accent: #c85a1d;
-    --accent-dark: #8f3f16;
+    --bg: #f3f4f6;
+    --bg-soft: #eef2f7;
+    --card: #ffffff;
+    --card-strong: #ffffff;
+    --text: #1f2937;
+    --muted: #4b5563;
+    --line: #d7dde5;
+    --accent: #1d4ed8;
+    --accent-dark: #1e3a8a;
     --secondary: #0f766e;
-    --warm: #ffedd5;
-    --cool: #dff7f4;
-    --shadow: 0 18px 40px rgba(31, 41, 51, 0.12);
-    --radius: 24px;
+    --warm: #e8f0ff;
+    --cool: #e8f7f4;
+    --shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    --radius: 14px;
 }
 
 * {
@@ -28,10 +28,7 @@ body {
     min-height: 100vh;
     color: var(--text);
     font-family: "Segoe UI", "Microsoft YaHei UI", sans-serif;
-    background:
-        radial-gradient(circle at top left, rgba(255, 214, 170, 0.8), transparent 28%),
-        radial-gradient(circle at top right, rgba(191, 239, 231, 0.8), transparent 22%),
-        linear-gradient(180deg, #f7f1e8 0%, #f1e7d8 100%);
+    background: var(--bg);
 }
 
 a {
@@ -73,13 +70,12 @@ pre {
     border: 1px solid var(--line);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    backdrop-filter: blur(12px);
 }
 
 .hero,
 .page-header {
-    padding: 36px;
-    margin-bottom: 24px;
+    padding: 28px;
+    margin-bottom: 18px;
 }
 
 .hero h1,
@@ -100,8 +96,8 @@ pre {
 
 .eyebrow {
     margin: 0;
-    font-size: 0.85rem;
-    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
     font-weight: 700;
@@ -121,17 +117,17 @@ pre {
 .text-link,
 .page-nav a,
 .link-list a {
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 18px;
-    border-radius: 999px;
+    padding: 10px 16px;
+    border-radius: 10px;
     border: 1px solid transparent;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -139,19 +135,18 @@ pre {
 .text-link:hover,
 .page-nav a:hover,
 .link-list a:hover {
-    transform: translateY(-1px);
+    color: var(--accent-dark);
 }
 
 .button.primary {
     background: var(--accent);
-    color: #fffaf5;
-    box-shadow: 0 12px 28px rgba(200, 90, 29, 0.25);
+    color: #ffffff;
 }
 
 .button.secondary {
-    background: transparent;
-    border-color: rgba(15, 118, 110, 0.25);
-    color: var(--secondary);
+    background: #f8fafc;
+    border-color: var(--line);
+    color: var(--text);
 }
 
 .card-grid {
@@ -173,7 +168,7 @@ pre {
 }
 
 .card {
-    padding: 24px;
+    padding: 20px;
 }
 
 .card h2,
@@ -186,7 +181,7 @@ pre {
     margin-bottom: 10px;
     color: var(--accent);
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
 }
 
 .feature-list,
@@ -237,8 +232,8 @@ pre {
 .text-link,
 .page-nav a,
 .link-list a {
-    color: var(--secondary);
-    font-weight: 700;
+    color: var(--accent-dark);
+    font-weight: 600;
 }
 
 .code-block {
@@ -277,7 +272,7 @@ pre {
 }
 
 .demo-table th {
-    background: rgba(15, 118, 110, 0.08);
+    background: #f8fafc;
 }
 
 .table-scroll {
@@ -363,17 +358,17 @@ pre {
 }
 
 .status-banner.success {
-    background: rgba(15, 118, 110, 0.12);
+    background: #edf7f4;
     color: #0f5f58;
 }
 
 .status-banner.warning {
-    background: rgba(200, 90, 29, 0.12);
-    color: #8f3f16;
+    background: #eef4ff;
+    color: #1e40af;
 }
 
 .status-banner.danger {
-    background: rgba(153, 27, 27, 0.12);
+    background: #fef2f2;
     color: #991b1b;
 }
 
@@ -514,13 +509,7 @@ pre {
 }
 
 .background-showcase::after {
-    content: "";
-    position: absolute;
-    inset: auto -40px -60px auto;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(200, 90, 29, 0.35), transparent 65%);
+    display: none;
 }
 
 .iframe-shell {
@@ -546,7 +535,7 @@ pre {
 
 .frame-page {
     padding: 16px;
-    background: linear-gradient(180deg, #f7f1e8 0%, #efe0c7 100%);
+    background: #f3f4f6;
 }
 
 .frame-nav {

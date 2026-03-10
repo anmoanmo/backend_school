@@ -16,11 +16,9 @@
 <body class="theme-section">
 <div class="page-shell wide-shell">
     <header class="page-header">
-        <p class="eyebrow">Complete Project / Chapters</p>
-        <h1>完整项目版章节目录</h1>
-        <p class="section-intro">
-            这个页面保留了原课程项目的分章入口，但入口已经统一挂到完整项目版之下。你可以按章节演示，也可以回到完整项目首页按业务模块演示。
-        </p>
+        <p class="eyebrow">Course Chapters</p>
+        <h1>章节目录</h1>
+        <p class="section-intro">这里保留原来的章节入口，便于按课程顺序单独演示。</p>
         <nav class="page-nav">
             <a href="<%= request.getContextPath() %>/complete-project/home">返回完整项目首页</a>
             <a href="<%= request.getContextPath() %>/central-controller/list">学生数据中心</a>
@@ -34,15 +32,6 @@
     </header>
 
     <main class="content-stack">
-        <section class="card">
-            <h2>使用方式</h2>
-            <ul class="feature-list">
-                <li>如果你要按老师的章节顺序演示，直接从下方卡片依次点击即可。</li>
-                <li>如果你要展示“完整项目”，优先从完整项目首页进入，再跳转到学生、文件、安全和监控模块。</li>
-                <li>根路径 <code>/index.jsp</code> 现在会直接进入完整项目首页，这个目录页只作为课程分章地图保留。</li>
-            </ul>
-        </section>
-
         <section class="card-grid">
             <article class="card">
                 <span class="card-index">01-02</span>
@@ -109,15 +98,6 @@
                     <a class="text-link" href="<%= request.getContextPath() %>/listener-demo.jsp">第十五章 监听器</a>
                 </div>
             </article>
-        </section>
-
-        <section class="card">
-            <h2>推荐演示顺序</h2>
-            <ol class="feature-list">
-                <li>先从完整项目首页进入，展示这是一个已经整合后的统一项目。</li>
-                <li>再进入章节目录，说明各模块分别来自哪一章课程任务。</li>
-                <li>登录后进入中央控制器，演示学生 CRUD、文件上传下载、过滤器和监听器统计如何在同一项目中联动。</li>
-            </ol>
         </section>
     </main>
 </div>
