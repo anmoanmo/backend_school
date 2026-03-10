@@ -59,9 +59,12 @@ public class LoginServlet extends HttpServlet {
         if (normalized == null) {
             return DEFAULT_TARGET;
         }
+        if (normalized.startsWith("/central-controller/") || "/listener-demo.jsp".equals(normalized)) {
+            return normalized;
+        }
         if (!normalized.startsWith("/central-controller/")) {
             return DEFAULT_TARGET;
         }
-        return normalized;
+        return DEFAULT_TARGET;
     }
 }

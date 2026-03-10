@@ -24,6 +24,7 @@
         <nav class="page-nav">
             <a href="<%= request.getContextPath() %>/index.jsp">返回首页</a>
             <a href="<%= request.getContextPath() %>/login">回到第十三章登录页</a>
+            <a href="<%= request.getContextPath() %>/listener-demo.jsp">下一章：监听器</a>
             <a href="<%= request.getContextPath() %>/filter-control.jsp">刷新过滤器页</a>
         </nav>
     </header>

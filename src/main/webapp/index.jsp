@@ -13,11 +13,11 @@
         <p class="eyebrow">Backend Development Basics</p>
         <h1>后端服务开发基础课程项目</h1>
         <p class="hero-text">
-            这个项目按“前端基础到后端数据管理”的顺序整理了当前十四章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC、本地 MySQL、中央控制器架构、登录鉴权和过滤器控制串成了一个完整示例。
+            这个项目按“前端基础到后端数据管理”的顺序整理了当前十五章课程任务。每一章都保留了可直接浏览和测试的页面，也把 Servlet、VO、DAO、JDBC、本地 MySQL、中央控制器架构、登录鉴权、过滤器控制和监听器应用串成了一个完整示例。
         </p>
         <div class="hero-actions">
             <a class="button primary" href="html-basics.html">从第一章开始</a>
-            <a class="button secondary" href="filter-control.jsp">直达第十四章</a>
+            <a class="button secondary" href="listener-demo.jsp">直达第十五章</a>
         </div>
     </header>
 
@@ -157,6 +157,16 @@
                 <a class="text-link" href="central-controller/list">受保护资源入口</a>
             </div>
         </article>
+
+        <article class="card">
+            <span class="card-index">15</span>
+            <h2>第十五章 监听器的应用</h2>
+            <p>定义监听器、配置监听器，并把监听器应用到应用启动时间统计、会话统计和登录状态统计中。</p>
+            <div class="link-list">
+                <a class="text-link" href="listener-demo.jsp">第十五章监听器页</a>
+                <a class="text-link" href="login?redirect=%2Flistener-demo.jsp">登录后查看监听器统计</a>
+            </div>
+        </article>
     </main>
 
     <section class="card">
@@ -174,6 +184,7 @@
             <li>第十二章进入中央控制器页，观察学生管理与文件管理如何统一进入一个入口，再按路径分发到列表、表单、保存、删除、上传和下载动作。</li>
             <li>第十三章先访问登录页，再登录进入中央控制器，确认用户名密码验证、错误提示和退出登录都能正常工作。</li>
             <li>第十四章打开过滤器页，观察过滤器定义、过滤器配置，以及未登录访问受保护资源时如何被拦截并重定向到登录页。</li>
+            <li>第十五章打开监听器页，观察监听器定义、监听器配置，以及应用启动时间、会话数和已登录会话数如何随操作变化。</li>
             <li>根目录中的 README 负责说明整体结构，本地数据库信息保存在不上传的 `.local` 文档中。</li>
         </ul>
     </section>
