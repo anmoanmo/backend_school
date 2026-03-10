@@ -134,8 +134,8 @@
 
 - 根启动页：`src/main/webapp/index.jsp`
 - 完整项目入口 Servlet：`src/main/java/com/example/backend_development/CompleteProjectServlet.java`
-- 完整项目首页：`src/main/webapp/complete-project/home.jsp`
-- 完整项目章节目录：`src/main/webapp/complete-project/chapters.jsp`
+- 完整项目首页：`src/main/webapp/WEB-INF/complete-project/home.jsp`
+- 完整项目章节目录：`src/main/webapp/WEB-INF/complete-project/chapters.jsp`
 - 基础 Servlet 示例：`src/main/java/com/example/backend_development/HelloServlet.java`
 - HTML 表单回显示例：`src/main/java/com/example/backend_development/FormEchoServlet.java`
 

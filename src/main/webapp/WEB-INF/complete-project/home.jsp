@@ -20,6 +20,9 @@
             ? 0 : (Integer) request.getAttribute("authenticatedSessions");
     LocalDateTime appStartTime = (LocalDateTime) request.getAttribute("appStartTime");
     String uploadRootDirectory = (String) request.getAttribute("uploadRootDirectory");
+    boolean dataAvailable = request.getAttribute("dataAvailable") instanceof Boolean
+            && (Boolean) request.getAttribute("dataAvailable");
+    String dataMessage = (String) request.getAttribute("dataMessage");
     String currentUser = AuthSessionUtil.getAuthenticatedUsername(session);
     boolean loggedIn = currentUser != null;
 %>
@@ -58,6 +61,13 @@
     <% } else { %>
     <section class="status-banner warning">
         当前未登录。你仍然可以浏览课程章节和前端基础页面；进入中央控制器模块时会由过滤器要求先登录。
+    </section>
+    <% } %>
+
+    <% if (!dataAvailable) { %>
+    <section class="status-banner warning">
+        <strong>数据模块暂不可用：</strong><%= HtmlUtil.escapeHtml(dataMessage == null ? "数据库尚未连接。" : dataMessage) %>
+        你仍然可以浏览完整项目首页、章节目录、前端页面以及登录与监听器入口。
     </section>
     <% } %>
 
