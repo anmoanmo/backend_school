@@ -166,6 +166,12 @@ pre {
     gap: 18px;
 }
 
+.project-summary-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 18px;
+}
+
 .card {
     padding: 24px;
 }
@@ -605,6 +611,10 @@ pre {
 
     .section-toolbar {
         flex-direction: column;
+    }
+
+    .project-summary-grid {
+        grid-template-columns: 1fr;
     }
 
     .table-scroll {

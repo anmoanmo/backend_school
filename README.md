@@ -2,6 +2,8 @@
 
 这个项目把当前已经完成的课程任务整理成一个递进式 JavaWeb 示例，从 HTML 基础一直走到 Servlet + JDBC + MySQL 查询、删除、按主键修改、交互整合、JSP 视图开发、文件上传、文件下载、中央控制器架构、登录实现、过滤器控制和监听器应用。
 
+现在项目还额外提供了一个“完整项目版”入口，把 1 到 15 章按真实业务模块重新组合为统一首页、统一导航和统一演示路径。
+
 ## 章节结构
 
 ### 第一章：HTML 基础
@@ -130,16 +132,31 @@
 
 ## 项目入口
 
-- 首页：`src/main/webapp/index.jsp`
+- 根启动页：`src/main/webapp/index.jsp`
+- 完整项目入口 Servlet：`src/main/java/com/example/backend_development/CompleteProjectServlet.java`
+- 完整项目首页：`src/main/webapp/complete-project/home.jsp`
+- 完整项目章节目录：`src/main/webapp/complete-project/chapters.jsp`
 - 基础 Servlet 示例：`src/main/java/com/example/backend_development/HelloServlet.java`
 - HTML 表单回显示例：`src/main/java/com/example/backend_development/FormEchoServlet.java`
+
+## 完整项目版说明
+
+- 启动应用后，默认会进入 `/complete-project/home`
+- `complete-project` 目录是新的独立完整项目目录
+- 完整项目首页负责集中展示：
+  - 学生数据中心入口
+  - 文件服务中心入口
+  - 登录与过滤器入口
+  - 监听器统计结果
+  - 最近学生数据与最近上传文件
+- 原来的章节级页面没有删除，统一保留在 `complete-project/chapters` 目录页中继续访问
 
 ## 结构优化说明
 
 - 学生表单参数映射统一收口到 `StudentRecordMapper`
 - HTML 转义和默认文本处理统一收口到 `HtmlUtil`
 - 第三章和第四章的结果页改为 JSP，避免在 Servlet 中维护大量 `out.println`
-- 首页按章节组织，便于按课程顺序演示
+- 根启动页改为直接进入完整项目首页，章节目录单独保留在 `complete-project/chapters`
 
 ## 本地运行
 
@@ -185,3 +202,4 @@
 12. 打开第十三章登录页，使用 `admin / 123456` 登录后进入中央控制器，再测试退出登录和错误提示
 13. 打开第十四章过滤器页，再在未登录状态下访问中央控制器，确认过滤器会拦截并要求先登录
 14. 打开第十五章监听器页，刷新页面、登录、退出登录后观察应用启动时间、累计会话数、在线会话数和已登录会话数的变化
+15. 最后回到完整项目首页，展示前端基础、学生管理、文件服务、登录过滤和监听器统计已经被统一整合到一个独立目录和一个启动入口中
